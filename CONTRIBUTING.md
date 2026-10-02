@@ -25,7 +25,7 @@ start to finish.
 
 ## Reporting a bug or suggesting a change
 
-Use the [issue templates](https://github.com/Human-Rights-First-Innovation-Lab/readynow/issues/new/choose).
+Use the [issue templates](https://github.com/Human-Rights-First-Innovation-Lab/ReadyNow-App/issues/new/choose).
 There are three: a bug report, a feature request, and a translation
 correction. Blank issues are turned off, because the templates ask the
 questions we would otherwise have to come back for.
@@ -80,10 +80,14 @@ checks this on every pull request and will fail if a commit is missing it. See
 [Licensing of contributions](#licensing-of-contributions) below and
 [DCO.md](DCO.md), which explains how to fix it if you forget.
 
-**Pull requests** should target `develop`, not `main`. Keep them focused; a PR
-that fixes one thing gets reviewed quickly, and one that fixes five gets
-stalled. Describe how you tested on a real device or emulator, and say which
-platform.
+**Pull requests** should target `develop`, not `main` — `develop` is this
+repository's default branch, so cloning or forking lands you there already.
+`main` tracks what's live in production; `develop` is where changes land first
+for build testing before release, which means it can contain unreleased work.
+If that's in progress when you start, your PR should build on it rather than
+on `main`. Keep PRs focused; a PR that fixes one thing gets reviewed quickly,
+and one that fixes five gets stalled. Describe how you tested on a real device
+or emulator, and say which platform.
 
 ## Who maintains this, and what to expect
 
