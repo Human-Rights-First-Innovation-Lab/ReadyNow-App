@@ -25,7 +25,7 @@ start to finish.
 
 ## Reporting a bug or suggesting a change
 
-Use the [issue templates](https://github.com/Human-Rights-First-Innovation-Lab/readynow/issues/new/choose).
+Use the [issue templates](https://github.com/Human-Rights-First-Innovation-Lab/ReadyNow-App/issues/new/choose).
 There are three: a bug report, a feature request, and a translation
 correction. Blank issues are turned off, because the templates ask the
 questions we would otherwise have to come back for.
