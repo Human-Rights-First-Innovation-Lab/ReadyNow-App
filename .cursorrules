@@ -1,0 +1,287 @@
+# ReadyNow Cursor Rules
+
+You are an expert React Native and Expo developer working on the ReadyNow emergency alert application. Follow these rules strictly to maintain code quality, security, and consistency.
+
+## Core Development Principles
+
+- Always use TypeScript with strict mode enabled
+- Never use the `any` type - prefer `unknown` if a more accurate type is not possible
+- Follow Expo/React Native best practices and patterns
+- Use functional components with hooks exclusively
+- Prioritize security and data protection in all implementations
+
+## Project Architecture
+
+### Tech Stack
+
+- **Framework**: Expo (React Native)
+- **Language**: TypeScript with strict mode
+- **Authentication**: Auth0 (passwordless SMS)
+- **Storage**: expo-secure-store for sensitive data
+- **Styling**: NativeWind (Tailwind CSS for React Native)
+- **Navigation**: Expo Router (file-based routing)
+- **State Management**: React Context API
+- **Internationalization**: Custom translation system
+
+### File Structure Rules
+
+- Place components in `app/components/`
+- Place screens in `app/screens/`
+- Place utilities in `app/utils/`
+- Place services in `app/services/`
+- Place translations in `app/translations/`
+- Place types in `app/types/`
+- Use PascalCase for component files, camelCase for utilities
+
+## Security Requirements (CRITICAL)
+
+### Data Storage
+
+- ALWAYS use `expo-secure-store` for sensitive data
+- ALWAYS encrypt data before storing using `encryption-utils.ts`
+- NEVER store sensitive data in AsyncStorage or regular state
+- Implement data chunking for payloads > 1800 bytes
+- Use biometric authentication for sensitive operations
+
+### Data Handling
+
+- NEVER log sensitive data in production
+- Always implement proper data wiping after alerts
+- Use secure random for cryptographic operations
+- Exclude sensitive data from iOS backups
+- Handle encryption/decryption errors gracefully
+
+### Authentication
+
+- Use Auth0 passwordless SMS authentication
+- Implement proper session management
+- Handle authentication errors without exposing sensitive info
+
+## Code Style & Patterns
+
+### TypeScript
+
+- Define interfaces for all data structures
+- Use type aliases for unions and computed types
+- Export types separately from implementations
+- Use generic constraints for type safety
+- Never use `any` - use `unknown` if needed
+
+### React Native Components
+
+- Use functional components with hooks
+- Implement proper cleanup in useEffect
+- Use Animated API for smooth animations
+- Handle platform differences (iOS vs Android)
+- Use NativeWind for styling (className prop)
+- Implement proper error boundaries
+
+### State Management
+
+- Use React Context for global state
+- Keep local state minimal and focused
+- Use useCallback and useMemo for performance
+- Implement proper dependency arrays in useEffect
+
+### Styling
+
+- Use NativeWind utility classes exclusively
+- Use template literals for conditional classes
+- Implement platform-specific styling when needed
+- Follow design system color palette
+- Use custom typography classes
+
+## API Integration
+
+### REST APIs
+
+- Always handle errors gracefully
+- Transform data to API format explicitly
+- Use proper TypeScript interfaces for requests/responses
+- Implement retry logic for network failures
+- Never expose API keys in client code
+
+### Error Handling
+
+- Log errors appropriately without sensitive data
+- Return safe error messages to users
+- Implement fallback mechanisms
+- Use try-catch blocks for async operations
+
+## Data Management
+
+### Storage Patterns
+
+- Use versioning for data format migrations
+- Implement chunking for large data sets
+- Handle both encrypted and unencrypted formats
+- Provide migration utilities for data updates
+- Clean up old data after successful migration
+
+### Translation & i18n
+
+- Use `usePageTranslation` hook for all user-facing text
+- Never hardcode strings in components
+- Support multiple languages (en, es, ko)
+- Use translation keys consistently
+
+## Performance & Optimization
+
+### React Native Specific
+
+- Use `useNativeDriver: false` for layout animations
+- Implement proper image optimization
+- Use FlatList for large lists
+- Avoid unnecessary re-renders
+- Clean up timers and subscriptions
+
+### Memory Management
+
+- Implement proper cleanup in useEffect
+- Use WeakMap for object references when appropriate
+- Avoid memory leaks in long-running operations
+- Monitor memory usage in development
+
+## Error Handling & Logging
+
+### Error Patterns
+
+- Use console.error for errors that need attention
+- Use console.warn for concerning but non-critical issues
+- Use console.info for important operational information
+- Use console.debug for detailed debugging information
+- Never log sensitive data
+
+### Error Boundaries
+
+- Implement error boundaries for React Native
+- Provide fallback UI for error states
+- Log errors with context but not sensitive data
+- Handle platform-specific errors appropriately
+
+## Testing & Quality
+
+### Code Quality
+
+- Write self-documenting code with clear variable names
+- Use JSDoc comments for public APIs
+- Implement proper TypeScript types
+- Follow existing patterns in the codebase
+- Ensure all code passes TypeScript strict mode
+
+### Security Testing
+
+- Verify sensitive data is encrypted
+- Test biometric authentication flows
+- Verify data wiping functionality
+- Test platform-specific security features
+
+## Import & Export Patterns
+
+### Import Organization
+
+1. React and React Native imports
+2. Expo imports
+3. Internal utilities and types
+4. Components and hooks
+
+### Export Patterns
+
+- Use named exports for utilities and components
+- Use default exports for main module exports
+- Export types separately from implementations
+- Use barrel exports for related functionality
+
+## Platform Considerations
+
+### iOS Specific
+
+- Handle iOS-specific permissions properly
+- Use iOS-specific backup exclusion
+- Implement proper iOS navigation patterns
+- Handle iOS-specific error messages
+
+### Android Specific
+
+- Handle Android-specific permissions
+- Use Android-specific styling when needed
+- Implement proper Android navigation patterns
+- Handle Android-specific error messages
+
+## Emergency Alert Specific Rules
+
+### Alert Button
+
+- Implement proper press handling (onPressIn/onPressOut)
+- Use countdown timers for alert confirmation
+- Handle accidental presses gracefully
+- Implement proper animation feedback
+
+### Data Processing
+
+- Transform emergency plan data to proper format
+- Handle location data securely
+- Process contact information safely
+- Implement proper message formatting
+
+### Legal Support
+
+- Handle legal support data with extra security
+- Implement proper data validation
+- Use secure API integration for legal services
+- Handle sensitive personal information appropriately
+
+## Documentation Standards
+
+### Code Comments
+
+- Use JSDoc for all public APIs
+- Explain complex business logic
+- Document architectural decisions
+- Provide examples for complex functions
+
+### README Updates
+
+- Keep setup instructions current
+- Document new features and changes
+- Provide troubleshooting guides
+- Reference CONVENTIONS.md for development
+
+## Common Patterns to Follow
+
+### Component Structure
+
+```typescript
+interface ComponentProps {
+  // Define props with proper types
+}
+
+const Component: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
+  // State and hooks
+  // Effects
+  // Event handlers
+  // Render
+};
+```
+
+### Error Handling Examples
+
+```typescript
+try {
+  const result = await operation();
+  return result;
+} catch (error) {
+  console.error("Operation failed:", error);
+  return { success: false, error: "Safe error message" };
+}
+```
+
+### Secure Storage
+
+```typescript
+// Always encrypt before storing
+const encryptedData = await encryptData(jsonData);
+await SecureStore.setItemAsync(key, encryptedData);
+```
+
+Remember: Security and data protection are paramount in this emergency alert application. Always prioritize user privacy and data security in all implementations.

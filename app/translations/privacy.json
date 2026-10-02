@@ -1,0 +1,110 @@
+{
+    "en": {
+        "title": "Privacy",
+        "privacyMatters": "Your Privacy Matters",
+        "personalInfoSharingConcern": "We understand that sharing your personal information is scary.",
+        "dataConfidentiality": "Just like at the doctor, your data is confidential and never shared without your consent.",
+        "securityTip": "Security Tip",
+        "securityTipText": "For enhanced protection, secure your phone with a numeric passcode or pattern, and disable Face ID and Touch ID.",
+        "learnMoreText": "Learn more about how we keep your data secure here",
+        "privacyPolicyLink": "View Privacy Policy",
+        "termsOfServiceLink": "Terms of Service",
+        "continue": "Continue"
+    },
+    "es": {
+        "title": "Protección de datos",
+        "privacyMatters": "Su Privacidad es Importante",
+        "personalInfoSharingConcern": "Entendemos que compartir su información personal da miedo.",
+        "dataConfidentiality": "Como ir al medico, tus datos son confidenciales y nunca se comparten sin tu consentimiento.",
+        "securityTip": "Consejo de Seguridad",
+        "securityTipText": "Para una mejor protección, protege su teléfono con un código numérico o un patrón, y desactiva Face ID y Touch ID.",
+        "learnMoreText": "Para más información sobre cómo protegemos sus datos visita nuestra pagina aquí.",
+        "privacyPolicyLink": "Ver Política de Privacidad",
+        "termsOfServiceLink": "Términos de Servicio",
+        "continue": "Continuar"
+    },
+    "kr": {
+        "title": "개인정보 보호",
+        "privacyMatters": "귀하의 개인정보가 중요합니다",
+        "personalInfoSharingConcern": "개인 정보를 공유하는 것이 불안하다는 것을 이해합니다.",
+        "dataConfidentiality": "의사와 마찬가지로, 귀하의 데이터는 기밀이며 귀하의 동의 없이는 절대 공유되지 않습니다.",
+        "securityTip": "보안 팁",
+        "securityTipText": "보호 강화를 위해 숫자 암호나 패턴으로 휴대폰을 보호하고, Face ID와 Touch ID를 비활성화하세요.",
+        "learnMoreText": "여기에서 귀하의 데이터를 안전하게 유지하는 방법에 대해 자세히 알아보세요",
+        "privacyPolicyLink": "개인정보 처리방침 보기",
+        "termsOfServiceLink": "서비스 약관",
+        "continue": "계속"
+    },
+    "fr": {
+        "title": "Confidentialité",
+        "privacyMatters": "Votre vie privée est importante",
+        "personalInfoSharingConcern": "Nous comprenons que partager vos informations personnelles peut être source d'inquiétude.",
+        "dataConfidentiality": "Comme chez le médecin, vos données sont confidentielles et ne seront jamais partagées sans votre consentement préalable.",
+        "securityTip": "Conseil de sécurité",
+        "securityTipText": "Pour une meilleure protection, sécurisez votre téléphone avec un code secret (chiffres ou motif) et désactivez la reconnaissance faciale (Face ID) et l'empreinte digitale (Touch ID)",
+        "learnMoreText": "En savoir plus sur la protection de vos données ici",
+        "privacyPolicyLink": "Voir la Politique de Confidentialité",
+        "termsOfServiceLink": "Conditions d'Utilisation",
+        "continue": "Continuer"
+    },
+    "ht": {
+        "title": "Konfidansyalite",
+        "privacyMatters": "Vi ou enpòtan",
+        "personalInfoSharingConcern": "Nou konprann ke pataje enfòmasyon pèsonèl ou ka lakòz enkyetid.",
+        "dataConfidentiality": "Tankou nan men doktè a, done ou yo konfidansyèl e yo pap janm pataje san konsantman ou.",
+        "securityTip": "Konsèy pou sekirite",
+        "securityTipText": "Pou yon pi bon pwoteksyon, asire telefon ou ak yon kòd sekrè (nimewo oswa desen) e dezaktive rekonesans figi (Face ID) ak anprent dijital (Touch ID)",
+        "learnMoreText": "Aprann plis sou pwoteksyon done ou yo isit la",
+        "privacyPolicyLink": "Gade Règleman Konfidansyalite",
+        "termsOfServiceLink": "Kondisyon Sèvis",
+        "continue": "Kontinye"
+    },
+    "zh": {
+        "title": "隐私",
+        "privacyMatters": "我们重视您的隐私",
+        "personalInfoSharingConcern": "我们理解分享您的个人信息带来的恐惧。",
+        "dataConfidentiality": "但使用此应用软件就像问诊，您的数据是保密的，没有您的同意绝不会被分享。",
+        "securityTip": "安全贴士",
+        "securityTipText": "为了强化防护，请为您的手机设置密码和图案解锁，并禁用面容识别和指纹识别功能。",
+        "learnMoreText": "点此了解更多有关我们如何保障您的数据安全",
+        "privacyPolicyLink": "查看隐私政策",
+        "termsOfServiceLink": "服务条款",
+        "continue": "继续"
+    },
+    "ar": {
+        "title": "الخصوصية",
+        "privacyMatters": "خصوصيتك مهمة",
+        "personalInfoSharingConcern": "نحن نفهم أن مشاركة معلوماتك الشخصية أمر مُخيف.",
+        "dataConfidentiality": "بياناتك ستبقى سرية ولا تشارك أبدًا دون موافقتك.",
+        "securityTip": "نصيحة أمنية",
+        "securityTipText": "لزيادة الحماية، قم بتأمين هاتفك برمز مرور رقمي أو نمط، وأوقف خاصية التعرف على الوجه أو البصمة.",
+        "learnMoreText": "اعرف المزيد عن كيفية حماية بياناتك من هنا",
+        "privacyPolicyLink": "سياسة الخصوصية",
+        "termsOfServiceLink": "شروط الخدمة",
+        "continue": "الصفحة التالية"
+    },
+    "dr": {
+        "title": "حریم خصوصی",
+        "privacyMatters": "حریم خصوصی شما مهم است",
+        "personalInfoSharingConcern": "ما می‌دانیم که به اشتراک گذاشتن اطلاعات شخصی می‌تواند ترسناک باشد.",
+        "dataConfidentiality": "درست مانند مراجعه به پزشک، اطلاعات شما محرمانه است و بدون رضایت شما هرگز به اشتراک گذاشته نمی‌شوند.",
+        "securityTip": "نکتهٔ امنیتی",
+        "securityTipText": "برای حفاظت بیشتر، تلفن خود را با رمز عددی یا الگو قفل کنید و قابلیت تشخیص چهره (Face ID) و اثر انگشت (Touch ID) را غیرفعال نمایید.",
+        "learnMoreText": "اطلاعات بیشتر دربارهٔ نحوهٔ حفظ امنیت اطلاعات شما را اینجا بیابید",
+        "privacyPolicyLink": "مشاهدهٔ سیاست حریم خصوصی",
+        "termsOfServiceLink": "شرایط خدمات",
+        "continue": "ادامه دهید"
+    },
+    "ps": {
+        "title": "محرمیت",
+        "privacyMatters": "ستاسو محرمیت مهم دی",
+        "personalInfoSharingConcern": "موږ پوهیږو چې د شخصي معلوماتو شریکول کیدای شي ویرونکي وي.",
+        "dataConfidentiality": "لکه د ډاکټر لیدنې په څېر، ستاسو معلومات محرم پاتې کیږي او هیڅکله پرته له ستاسو رضا شریکې نه کېږي",
+        "securityTip": "د امنیت لارښوونه",
+        "securityTipText": "د لا زیاته خونديتوب لپاره، خپل تلیفون د عددي پاسکوډ یا بڼه سره قفل کړئ او د مخ پېژندنې (Face ID) او د ګوتې نښه (Touch ID) ځانګړتیاوې غیر فعالې کړئ.",
+        "learnMoreText": "د خپلو معلوماتو د امنیت ساتنې په اړه نور معلومات دلته ومومئ",
+        "privacyPolicyLink": "د محرمیت پالیسي وګورئ",
+        "termsOfServiceLink": "د خدماتو شرایط",
+        "continue": "ادامه ورکړئ"
+    }
+}

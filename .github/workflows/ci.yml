@@ -1,0 +1,336 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+# Least privilege by default. Any job needing more declares it itself.
+permissions:
+  contents: read
+
+jobs:
+  dco:
+    name: DCO Sign-off
+    runs-on: ubuntu-latest
+    # Pull requests only. On a push to develop or main the commits are already
+    # merged, so a failure here would be unactionable - by then there is no
+    # branch left to amend.
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Need the full range between base and head, not just the tip.
+          fetch-depth: 0
+
+      - name: Check every commit is signed off
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          # Merge commits are excluded: they are generated when a contributor
+          # syncs with develop, are not authored work, and cannot be signed off
+          # without rewriting history the contributor did not create.
+          commits=$(git log --no-merges --format='%H' "$BASE_SHA..$HEAD_SHA")
+
+          if [ -z "$commits" ]; then
+            echo "No commits to check."
+            exit 0
+          fi
+
+          failed=0
+          report=""
+
+          for sha in $commits; do
+            author_name=$(git log -1 --format='%an' "$sha")
+            author_email=$(git log -1 --format='%ae' "$sha")
+            committer_email=$(git log -1 --format='%ce' "$sha")
+            subject=$(git log -1 --format='%s' "$sha")
+            short=$(git log -1 --format='%h' "$sha")
+
+            # Bot commits (Dependabot, Renovate, github-actions) are exempt.
+            # They carry no authorship a human could certify, and the org
+            # controls the account that produced them.
+            case "$author_email" in
+              *"[bot]@users.noreply.github.com"|*"@bots.github.com")
+                echo "skip  $short  $subject  (bot: $author_name)"
+                continue
+                ;;
+            esac
+
+            # Collect the email from every Signed-off-by trailer, lowercased.
+            signoffs=$(
+              git log -1 --format='%B' "$sha" \
+                | grep -i '^[[:space:]]*Signed-off-by:' \
+                | sed -n 's/.*<\(.*\)>.*/\1/p' \
+                | tr '[:upper:]' '[:lower:]' || true
+            )
+
+            author_lc=$(printf '%s' "$author_email" | tr '[:upper:]' '[:lower:]')
+            committer_lc=$(printf '%s' "$committer_email" | tr '[:upper:]' '[:lower:]')
+
+            if [ -z "$signoffs" ]; then
+              echo "FAIL  $short  $subject  (no Signed-off-by trailer)"
+              report="$report- \`$short\` $subject — no \`Signed-off-by\` trailer"$'\n'
+              failed=1
+              continue
+            fi
+
+            # The sign-off must belong to the author or the committer. A
+            # sign-off in someone else's name certifies nothing.
+            matched=0
+            while IFS= read -r email; do
+              [ -z "$email" ] && continue
+              if [ "$email" = "$author_lc" ] || [ "$email" = "$committer_lc" ]; then
+                matched=1
+              fi
+            done <<< "$signoffs"
+
+            if [ "$matched" -eq 1 ]; then
+              echo "ok    $short  $subject"
+            else
+              echo "FAIL  $short  $subject  (signed off by $(echo "$signoffs" | paste -sd, -), author is $author_lc)"
+              report="$report- \`$short\` $subject — signed off by \`$(echo "$signoffs" | paste -sd, -)\`, but authored by \`$author_lc\`"$'\n'
+              failed=1
+            fi
+          done
+
+          if [ "$failed" -eq 0 ]; then
+            echo "All commits are signed off."
+            echo "✅ All commits carry a valid \`Signed-off-by\` trailer." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          {
+            echo "### DCO check failed"
+            echo ""
+            echo "$report"
+            echo "Every commit needs a \`Signed-off-by\` line matching its author,"
+            echo "certifying you have the right to submit the work under Apache-2.0."
+            echo "Nothing to sign — see [DCO.md](https://github.com/Human-Rights-First-Innovation-Lab/readynow/blob/develop/DCO.md)."
+            echo ""
+            echo "**Fix the most recent commit:**"
+            echo ""
+            echo '```bash'
+            echo "git commit --amend -s --no-edit && git push --force-with-lease"
+            echo '```'
+            echo ""
+            echo "**Fix the whole branch:**"
+            echo ""
+            echo '```bash'
+            echo "git rebase --signoff origin/develop && git push --force-with-lease"
+            echo '```'
+            echo ""
+            echo "If the sign-off name is there but the check still fails, your"
+            echo "\`git config user.email\` does not match the commit author's email."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          exit 1
+
+  type-check:
+    name: TypeScript Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript type check
+        run: npm run type-check
+
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest tests with coverage
+        run: npm run test:coverage
+
+      - name: Verify coverage summary exists
+        run: |
+          if [ ! -f coverage/coverage-summary.json ]; then
+            echo "❌ Error: coverage-summary.json not found after running tests"
+            echo "Checking coverage directory contents:"
+            ls -la coverage/ || echo "Coverage directory does not exist"
+            exit 1
+          fi
+          echo "✅ Coverage summary file found"
+
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+
+  e2e-tests:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for E2E tests
+        id: check-tests
+        run: |
+          if [ -n "$(find e2e -name '*.spec.ts' -o -name '*.test.ts' -o -name '*.spec.js' -o -name '*.test.js' 2>/dev/null)" ]; then
+            echo "has_tests=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Playwright browsers
+        if: steps.check-tests.outputs.has_tests == 'true'
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        if: steps.check-tests.outputs.has_tests == 'true'
+        run: npm run test:e2e
+
+      - name: Skip E2E tests (no test files found)
+        if: steps.check-tests.outputs.has_tests == 'false'
+        run: echo "No E2E test files found. Skipping E2E tests."
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always() && steps.check-tests.outputs.has_tests == 'true'
+        with:
+          name: playwright-report
+          path: playwright-report/
+
+  coverage-check:
+    name: Coverage Check
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'pull_request'
+    # coverage-compare.js posts and updates a PR comment.
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download coverage report
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+
+      - name: Verify coverage summary in artifact
+        run: |
+          if [ ! -f coverage/coverage-summary.json ]; then
+            echo "❌ Error: coverage-summary.json not found in downloaded artifact"
+            echo "This may indicate that the test job failed to generate coverage."
+            echo ""
+            echo "Checking coverage directory contents:"
+            ls -la coverage/ 2>/dev/null || echo "Coverage directory does not exist"
+            echo ""
+            echo "Please check the 'test' job logs to see why coverage was not generated."
+            exit 1
+          fi
+          echo "✅ Coverage summary file found in artifact"
+
+      - name: Run coverage comparison
+        run: npm run coverage:compare
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+  audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Advisory, not blocking. Every current finding is a transitive
+      # dependency of the Expo/Metro build toolchain - none is imported by
+      # app/, twilio/ or scripts/, so none reaches a user's device. They are
+      # cleared by upgrading the Expo SDK, not by `npm audit fix --force`,
+      # which breaks the build. Flip this to blocking once that upgrade lands.
+      - name: Audit dependencies
+        continue-on-error: true
+        run: |
+          npm audit --audit-level=high | tee audit.txt
+          {
+            echo "### Dependency audit"
+            echo ""
+            echo '```'
+            tail -20 audit.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Blocking: a new *direct* dependency with a known critical advisory
+      # should stop the build even while the toolchain backlog is open.
+      - name: Fail on critical advisories in direct dependencies
+        run: |
+          npm audit --json > audit.json || true
+          node -e '
+            const fs = require("fs");
+            const audit = JSON.parse(fs.readFileSync("audit.json", "utf8"));
+            const pkg = JSON.parse(fs.readFileSync("package.json", "utf8"));
+            const direct = new Set([
+              ...Object.keys(pkg.dependencies || {}),
+              ...Object.keys(pkg.devDependencies || {}),
+            ]);
+            const bad = Object.entries(audit.vulnerabilities || {})
+              .filter(([n, v]) => v.severity === "critical" && direct.has(n))
+              .map(([n]) => n);
+            if (bad.length) {
+              console.error("Critical advisories in direct dependencies: " + bad.join(", "));
+              process.exit(1);
+            }
+            console.log("No critical advisories in direct dependencies.");
+          '

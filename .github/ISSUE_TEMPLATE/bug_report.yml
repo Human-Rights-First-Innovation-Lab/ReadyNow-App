@@ -1,0 +1,117 @@
+name: Bug report
+description: Something in the app behaves incorrectly
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before you write anything: this issue will be public and permanent.**
+
+        Do not include phone numbers, contact names, addresses, A-Numbers,
+        immigration status, screenshots of a real emergency plan, or anything
+        else that could identify a ReadyNow user. Redact freely — a report with
+        `+1 555-0100` in place of a real number is just as useful to us.
+
+        If the bug cannot be described without sensitive detail, email
+        <innovationlab@humanrightsfirst.org> instead.
+
+        If this is a security vulnerability, stop and read
+        [SECURITY.md](https://github.com/Human-Rights-First-Innovation-Lab/readynow/blob/develop/SECURITY.md).
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed all personal information from this report.
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what did the app do instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the Plan tab
+        2. ...
+        3. The app shows ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Does this affect sending an alert?
+      description: >-
+        The alert send path is the part of the app that has to work when
+        someone is in trouble. Bugs there are treated as urgent.
+      options:
+        - "No — it is elsewhere in the app"
+        - "Yes — an alert failed to send"
+        - "Yes — an alert reported success but did not arrive"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - Both
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device and OS version
+      placeholder: "Pixel 6a, Android 14 / iPhone SE 2nd gen, iOS 17.4"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown on the About screen. If you built from source, give the commit.
+      placeholder: "1.2.6, or commit f258989"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: App language
+      description: Several bugs only appear in one language, usually a layout one.
+      options:
+        - English
+        - Spanish
+        - Korean
+        - French
+        - Haitian Creole
+        - Chinese
+        - Arabic
+        - Dari
+        - Pashto
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: >-
+        Logs, screenshots with personal data removed, or whether it happens
+        every time or only sometimes.
+    validations:
+      required: false

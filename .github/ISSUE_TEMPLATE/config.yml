@@ -1,0 +1,18 @@
+blank_issues_enabled: false
+contact_links:
+  - name: I use ReadyNow and need help
+    url: https://github.com/Human-Rights-First-Innovation-Lab/readynow/blob/develop/SUPPORT.md
+    about: >-
+      If you are using the app rather than working on it, please do not open a
+      GitHub issue. Issues are public and permanent. Read SUPPORT.md for how to
+      reach us privately.
+  - name: Report a security vulnerability
+    url: https://github.com/Human-Rights-First-Innovation-Lab/readynow/security/advisories/new
+    about: >-
+      Never report a vulnerability in a public issue. Use private vulnerability
+      reporting, or email innovationlab@humanrightsfirst.org. See SECURITY.md.
+  - name: Ask a question or propose something large
+    url: mailto:innovationlab@humanrightsfirst.org
+    about: >-
+      For anything substantial, ask before you build it. Email the team and we
+      will tell you whether it fits.

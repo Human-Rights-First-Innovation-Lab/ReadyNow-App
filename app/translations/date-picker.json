@@ -1,0 +1,56 @@
+{
+    "en": {
+        "cancel": "Cancel",
+        "selectDate": "Select Date",
+        "done": "Done",
+        "selectDatePlaceholder": "Select date"
+    },
+    "es": {
+        "cancel": "Cancelar",
+        "selectDate": "Seleccionar Fecha",
+        "done": "Listo",
+        "selectDatePlaceholder": "Seleccionar fecha"
+    },
+    "kr": {
+        "cancel": "취소",
+        "selectDate": "날짜 선택",
+        "done": "완료",
+        "selectDatePlaceholder": "날짜 선택"
+    },
+    "fr": {
+        "cancel": "Annuler",
+        "selectDate": "Sélectionner une date",
+        "done": "Terminé",
+        "selectDatePlaceholder": "Sélectionner une date"
+    },
+    "ht": {
+        "cancel": "Anile",
+        "selectDate": "Chwazi Dat",
+        "done": "Fini",
+        "selectDatePlaceholder": "Chwazi dat"
+    },
+    "zh": {
+        "cancel": "取消",
+        "selectDate": "选择日期",
+        "done": "完成",
+        "selectDatePlaceholder": "选择日期"
+    },
+    "ar": {
+        "cancel": "إلغاء",
+        "selectDate": "حدد التاريخ",
+        "done": "تم",
+        "selectDatePlaceholder": "حدد التاريخ"
+    },
+    "dr": {
+        "cancel": "لغو",
+        "selectDate": "انتخاب تاریخ",
+        "done": "انجام شد",
+        "selectDatePlaceholder": "انتخاب تاریخ"
+    },
+    "ps": {
+        "cancel": "لغوه کول",
+        "selectDate": "نېټه وټاکئ",
+        "done": "ترسره شو",
+        "selectDatePlaceholder": "نېټه وټاکئ"
+    }
+}

@@ -1,0 +1,83 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Local signing credentials. credentials.json carries the .p12 password in
+# plaintext, and certs/ is where the .p12 and .mobileprovision live while
+# they are being uploaded to EAS. Neither belongs in a public repository.
+credentials.json
+certs/
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+.env
+app-example
+
+.env.local
+# Sentry
+sentry.properties
+
+#test coverage and reports
+coverage/
+*.lcov
+
+.cursor
+
+.idea/
+.vscode/
+
+# Xcode per-developer state
+xcuserdata/
+*.xcuserstate
+
+# Firebase config: contains a live API key. Copy from the template
+# (app/google-services.json.template) and fill in your own values.
+app/google-services.json
+
+# test artefacts
+playwright-report/
+test-results/
+audit.json
+audit.txt
+
+# Twilio Serverless Toolkit. twilio/.env carries live database credentials and
+# API keys, and .twiliodeployinfo records deploy state per machine. The bare
+# `.env` rule above happens to match the nested path, but this repository is
+# going public - do not rely on an implicit match for a file like this.
+twilio/.env*
+!twilio/.env.example
+twilio/.twiliodeployinfo
+
+# The DigitalOcean CA certificate. Not secret, but cluster-specific and not
+# ours to publish - download it from the DigitalOcean database panel.
+twilio/assets/ca.private.pem

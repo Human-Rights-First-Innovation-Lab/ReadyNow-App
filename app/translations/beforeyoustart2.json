@@ -1,0 +1,74 @@
+{
+    "en": {
+        "title": "Before You Get Started",
+        "locateANumber": "Locate Your A-Number",
+        "aNumberDescription": "If you are a non-citizen and have applied for immigration benefits in the U.S. or have had other encounters with immigration authorities, you likely have an A-number.",
+        "whereToFind": "Your A-number can be found on any formal documents from immigration agencies such as USCIS or EOIR and is typically listed as the letter 'A' followed by 8 or 9 numbers (such as A012345678).",
+        "whyImportant": "The app is open to everyone regardless of whether you have an A-number. However, including your A-number in your Emergency Plan is highly encouraged, as it can help locate you if you are detained by ICE. ",
+        "continue": "Continue"
+    },
+    "es": {
+        "title": "Antes de Comenzar",
+        "locateANumber": "Localice Su Número-A",
+        "aNumberDescription": "Si usted no es ciudadano y ha solicitado beneficios de inmigración en los EE. UU. o ha tenido otros encuentros con las autoridades de inmigración, es probable que tenga un número-A.",
+        "whereToFind": "Su número-A se puede encontrar en cualquier documento formal de agencias de inmigración como USCIS o EOIR y generalmente se enumera como la letra 'A' seguida de 8 o 9 números (como A012345678).",
+        "whyImportant": "La aplicación está abierta a todos, independientemente de si tiene un numero A. Sin embargo, se recomienda encarecidamente incluir su número A en su plan de emergencia, ya que puede ayudar a localizarse si usted es detenido por ICE.",
+        "continue": "Continuar"
+    },
+    "kr": {
+        "title": "시작하기 전에",
+        "locateANumber": "A-번호 찾기",
+        "aNumberDescription": "귀하가 미국 시민이 아니고 미국에서 이민 혜택을 신청했거나 이민 당국과 다른 접촉이 있었다면, 아마도 A-번호가 있을 것입니다.",
+        "whereToFind": "귀하의 A-번호는 USCIS나 EOIR과 같은 이민 기관의 공식 문서에서 찾을 수 있으며, 일반적으로 'A' 다음에 8자리 또는 9자리 숫자(예: A012345678)로 표시됩니다.",
+        "whyImportant": "이 앱은 A-번호 보유 여부와 관계없이 모든 사람에게 열려 있습니다. 그러나 A-번호를 비상 계획에 포함시키는 것을 강력히 권장합니다. ICE에 의해 구금될 경우 귀하를 찾는 데 도움이 될 수 있기 때문입니다.",
+        "continue": "계속"
+    },
+    "fr": {
+        "title": "Avant de commencer",
+        "locateANumber": "Trouver votre numéro A",
+        "aNumberDescription": "Si vous n'êtes pas citoyen(ne) et avez fait une demande de prestations d'immigration aux États-Unis ou avez eu d'autres contacts avec les autorités d'immigrations, vous avez probablement un numéro A.",
+        "whereToFind": "Votre numéro A figure sur tout document officiel provenant d'agences d'immigration telles que l'USCIS ou l'EOIR. Il est généralement présenté sous la forme de la lettre \"A\" suivie de 8 ou 9 chiffres (par ex. A012345678)",
+        "whyImportant": "L'application est ouverte à tous, que vous ayez ou non un numéro A. Cependant, il est fortement encouragé d'inclure votre numéro A dans votre plan d'urgence, car cela peut aider à vous localiser si vous êtes détenu par ICE.",
+        "continue": "Continuer"
+    },
+    "ht": {
+        "title": "Anvan ou kòmanse",
+        "locateANumber": "Chèche Nimewo A ou",
+        "aNumberDescription": "Si ou se yon moun ki pa sitwayen epi ou te fè demann pou benefis imigrasyon nan Etazini oswa ou te gen lòt rankont ak otorite imigrasyon, ou gen yon nimewo A.",
+        "whereToFind": "Nimewo A ou ka jwenn sou nenpòt dokiman fòmèl ki soti nan ajans imigrasyon tankou USCIS oswa EOIR. Li tipikman make ak lèt 'A' ki swiv pa 8 oswa 9 chif (tankou A012345678).",
+        "whyImportant": "Aplikasyon an ouvè pou tout moun, si ou gen yon nimewo A oswa ou pa gen youn. Sepandan, nou ankouraje w anpil pou enkli nimewo A ou nan Plan Ijans ou, paske li ka ede yo jwenn ou si ICE arete w.",
+        "continue": "Kontinye"
+    },
+    "zh": {
+        "title": "在您开始之前",
+        "locateANumber": "找到您的A-Number（外国人注册号）",
+        "aNumberDescription": "如果您是非公民并申请了美国移民福利，或者您曾与移民机关有过接触，您大概率有A-Number。",
+        "whereToFind": "您的A-Number可以在任何移民机关，例如USCIS或者EOIR的正规文件上找到，通常以字母A开始，后面跟随8或9位数字（例如A012345678）。",
+        "whyImportant": "无论您是否有A-Number，该应用程序都向所有人开放。但是，强烈建议您在紧急预案中包含您的A-Number，因为如果您被ICE拘留，这可以帮助定位您。",
+        "continue": "继续"
+    },
+    "ar": {
+        "title": "قبل أن تبدأ",
+        "locateANumber": "اعثر على \"الرقم A\" الخاص بك",
+        "aNumberDescription": "إذا لم تكن مواطنًا أمريكيًا وقد تقدمت بطلب للحصول على امتياز الهجرة في الولايات المتحدة أو كان لديك أي تعاملات سابقة مع سلطات الهجرة، فمن المحتمل أن يكون لديك \"رقم A\"",
+        "whereToFind": "يمكن العثور على رقم A الخاص بك في أي مستند رسمي صادر عن وكالات الهجرة مثل خدمات الجنسية والهجرة الأمريكية (USCIS) أو مكتب المحاكمات والهجرة (EOIR)، وعادة ما يكون مكتوبًا بالحرف \"A\" متبوعًا بـ 8 أو 9 أرقام (مثل: A012345678).",
+        "whyImportant": "التطبيق متاح للجميع سواء كان لديك رقم A أم لا. ومع ذلك، ننصح بشدة بإضافة رقم A في خطة الطوارئ الخاصة بك، لأنه يساعد في تحديد مكانك إذا تم احتجازك من قبل وحدة الهجرة والجمارك الأمريكية (ICE).",
+        "continue": "متابعة"
+    },
+    "dr": {
+        "title": "پیش از این که آغاز کنید",
+        "locateANumber": "شماره A خود را پیدا کنید",
+        "aNumberDescription": "اگر شما شهروند ایالات متحده نیستید و برای دریافت مزایای مهاجرتی در آمریکا درخواست داده‌اید یا برخوردهای دیگری با مقامات مهاجرتی داشته‌اید، به احتمال زیاد دارای شماره A هستید.",
+        "whereToFind": "شماره A شما در هرگونه اسناد رسمی صادرشده از سوی نهادهای مهاجرتی مانند USCIS یا EOIR قابل یافتن است و معمولاً به‌صورت حرف «A» به‌همراه ۸ یا ۹ رقم نوشته می‌شود. (مانند A012345678)",
+        "whyImportant": "این برنامه برای همه قابل استفاده است، چه شماره A داشته باشید و چه نداشته باشید. با این حال، اکیداً توصیه می‌شود که شماره A خود را در برنامه اضطراری وارد کنید، زیرا در صورت بازداشت شدن توسط ICE می‌تواند به پیدا کردن محل نگهداری شما کمک کند.",
+        "continue": "ادامه"
+    },
+    "ps": {
+        "title": "د پیل کولو څخه مخکې",
+        "locateANumber": "ستاسو د A شمېره پیدا کول",
+        "aNumberDescription": "که تاسو غیر تابعیت لرونکی یاست او د امریکا په متحده ایالاتو کې د مهاجرت ګټو لپاره غوښتنه کړې وي یا د مهاجرت چارواکو سره نور تعاملات لرلي وي، نو احتمالاً تاسو A شمېره لرئ.",
+        "whereToFind": "ستاسو A شمېره کولی شي په هر رسمي سند کې وموندل شي چې د مهاجرت ادارو لکه USCIS یا EOIR لخوا صادر شوی وي او معمولاً د «A» حرف سره پیل کیږي او ورپسې ۸ یا ۹ شمېرې لري (لکه A012345678).",
+        "whyImportant": "دا اپلیکیشن د ټولو لپاره خلاص دی، پرته له دې چې تاسو A شمېره لرئ یا نه. مګر، د خپل اضطراري پلان کې د A شمېره شاملول پیاوړې سپارښتنه ده، ځکه چې دا کولی شي په صورت کې چې تاسو د ICE لخوا ونیول شئ، د موندلو کې مرسته وکړي.",
+        "continue": "ادامه"
+    }
+}

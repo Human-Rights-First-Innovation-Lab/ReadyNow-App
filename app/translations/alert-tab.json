@@ -1,0 +1,74 @@
+{
+    "en": {
+        "pressAndHold": "Press and hold the button for 1.5 seconds to send your alert messages",
+        "pressAndHoldDemo": "Press and hold the button for 1.5 seconds to practice how it works",
+        "notice": "Notice",
+        "securityPurposes": "For security purposes, your emergency plan will be deleted if you press the ReadyNow alert button",
+        "securityPurposesDemo": "This is a safe demo mode. Your emergency plan will NOT be deleted",
+        "demoModeLabel": "DEMO MODE - Practice Version"
+    },
+    "es": {
+        "pressAndHold": "Mantén presionado el botón durante 1.5 segundos para enviar tus mensajes de alerta",
+        "pressAndHoldDemo": "Mantén presionado el botón durante 1.5 segundos para practicar cómo funciona",
+        "notice": "Aviso",
+        "securityPurposes": "Por motivos de seguridad, tu plan de emergencia será eliminado si presionas el botón de alerta ReadyNow",
+        "securityPurposesDemo": "Este es un modo de demostración seguro. Tu plan de emergencia NO será eliminado",
+        "demoModeLabel": "MODO DEMO - Versión de práctica"
+    },
+    "kr": {
+        "pressAndHold": "알림 메시지를 보내려면 버튼을 1.5초 동안 길게 누르세요",
+        "pressAndHoldDemo": "작동 방식을 연습하려면 버튼을 1.5초 동안 길게 누르세요",
+        "notice": "알림",
+        "securityPurposes": "보안상의 이유로 ReadyNow 경보 버튼을 누르면 비상 계획이 삭제됩니다",
+        "securityPurposesDemo": "이것은 안전한 시연 모드입니다. 비상 계획이 삭제되지 않습니다",
+        "demoModeLabel": "데모 모드 - 연습 버전"
+    },
+    "zh": {
+        "pressAndHold": "按下按钮并保持1.5秒来发送您的警报消息",
+        "pressAndHoldDemo": "按下按钮并保持1.5秒来练习其工作方式",
+        "notice": "注意",
+        "securityPurposes": "出于安全原因，当您按下警报按钮时，您的紧急预案将会从手机端删除",
+        "securityPurposesDemo": "这是一个安全的演示模式。您的紧急预案不会被删除",
+        "demoModeLabel": "演示模式 - 练习版本"
+    },
+    "fr": {
+        "pressAndHold": "Appuyez et maintenez le bouton pendant 1.5 secondes pour envoyer vos messages d'alerte",
+        "pressAndHoldDemo": "Appuyez et maintenez le bouton pendant 1.5 secondes pour pratiquer son fonctionnement",
+        "notice": "Remarque",
+        "securityPurposes": "Pour des raisons de sécurité, votre Plan d'Urgence sera supprimé si vous appuyez sur le Bouton d'Alerte",
+        "securityPurposesDemo": "Ceci est un mode démo sécurisé. Votre plan d'urgence ne sera PAS supprimé",
+        "demoModeLabel": "MODE DÉMO - Version de pratique"
+    },
+    "ht": {
+        "pressAndHold": "Peze epi kenbe bouton an pou 1.5 segonn pou voye mesaj alèt ou yo",
+        "pressAndHoldDemo": "Peze epi kenbe bouton an pou 1.5 segonn pou pratike kijan li fonksyone",
+        "notice": "Nòt",
+        "securityPurposes": "Pou rezon sekirite, Plan Ijans ou a ap efase si ou peze Bouton Alèt la",
+        "securityPurposesDemo": "Sa a se yon mòd demonstrasyon an sekirite. Plan Ijans ou a p ap efase",
+        "demoModeLabel": "MÒD DEMONSTRASYON - Vèsyon pratik"
+    },
+    "ar": {
+        "pressAndHold": "اضغط مع الاستمرار على الزر لمدة 1.5 ثانية لإرسال رسائل التنبيه الخاصة بك",
+        "pressAndHoldDemo": "اضغط مع الاستمرار على الزر لمدة 1.5 ثانية لممارسة كيفية عمله",
+        "notice": "تنبيه",
+        "securityPurposes": "لأسباب أمنية، سيتم حذف خطة الطوارئ الخاصة بك إذا ضغطت على زر التنبيه جاهز الآن",
+        "securityPurposesDemo": "هذا هو وضع التجريب الآمن. لن يتم حذف خطة الطوارئ الخاصة بك",
+        "demoModeLabel": "وضع التجريب - نسخة التدريب"
+    },
+    "dr": {
+        "pressAndHold": "دکمه را به مدت ۱.۵ ثانیه فشار داده و نگه دارید تا پیام‌های هشدار شما ارسال شوند",
+        "pressAndHoldDemo": "دکمه را به مدت ۱.۵ ثانیه فشار داده و نگه دارید تا نحوه کار آن را تمرین کنید",
+        "notice": "توجه",
+        "securityPurposes": "به دلایل امنیتی، برنامه اضطراری شما در صورت فشردن دکمه هشدار ReadyNow حذف خواهد شد",
+        "securityPurposesDemo": "این یک حالت نمایشی امن است. برنامه اضطراری شما حذف نخواهد شد",
+        "demoModeLabel": "حالت نمایشی - نسخه تمرینی"
+    },
+    "ps": {
+        "pressAndHold": "تڼۍ د ۱.۵ ثانیو لپاره کېکاږئ او ونیسئ تر څو ستاسو د خبرتیا پیغامونه واستول شي",
+        "pressAndHoldDemo": "تڼۍ د ۱.۵ ثانیو لپاره کېکاږئ او ونیسئ ترڅو تمرین وکړئ چې څنګه کار کوي",
+        "notice": "یادونه",
+        "securityPurposes": "د امنیتي موخو لپاره، که تاسو د ReadyNow خبرتیا تڼۍ کېکاږئ نو ستاسو اضطراري پلان به حذف شي",
+        "securityPurposesDemo": "دا یو خوندي ډیمو حالت دی. ستاسو اضطراري پلان به حذف نه شي",
+        "demoModeLabel": "ډیمو حالت - تمرین نسخه"
+    }
+}

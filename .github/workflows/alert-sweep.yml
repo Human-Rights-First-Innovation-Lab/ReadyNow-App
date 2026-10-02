@@ -1,0 +1,114 @@
+# Retry clock and cleanup for emergency alert delivery.
+#
+# This is not a routine maintenance job. It drives the retry ladder for
+# undelivered emergency alerts (see ALERT-DELIVERY-DESIGN.md §8.3) and enforces
+# the retention window on plan-derived data (§12). If it stops running, alerts
+# that failed on the first attempt are never retried and plaintext recipient
+# data is never purged.
+#
+# IMPORTANT: GitHub disables scheduled workflows in public repositories after
+# 60 days with no commits. This repository is intended to be open sourced, so
+# that will eventually happen during a quiet period. The `sweep` action writes
+# an ops_heartbeat row on every run and alerting MUST be configured on a stale
+# heartbeat - do not rely on this workflow being noticed when it stops.
+
+name: Alert Sweep
+
+on:
+  schedule:
+    # Every 5 minutes. GitHub's minimum cadence; actual runs are frequently
+    # delayed 5-15 minutes under load, which the ~2 hour retry horizon tolerates.
+    - cron: "*/5 * * * *"
+  workflow_dispatch: # manual run, for incident response
+
+# Least privilege: this workflow only makes an outbound HTTPS call.
+permissions:
+  contents: read
+
+concurrency:
+  # Never let a delayed run overlap a scheduled one. The sweep claims rows with
+  # SELECT ... FOR UPDATE SKIP LOCKED so overlap is safe, but serialising keeps
+  # the logs readable and avoids doubling load on the database.
+  group: alert-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    name: Retry undelivered alerts and purge expired records
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Call sweep endpoint
+        id: sweep
+        env:
+          ALERT_ENDPOINT: ${{ secrets.ALERT_ENDPOINT }}
+          SWEEP_SECRET: ${{ secrets.ALERT_SWEEP_SECRET }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${ALERT_ENDPOINT:-}" ] || [ -z "${SWEEP_SECRET:-}" ]; then
+            echo "::error::ALERT_ENDPOINT or ALERT_SWEEP_SECRET is not configured."
+            echo "::error::The retry clock is not running. Configure both repository secrets."
+            exit 1
+          fi
+
+          # --fail-with-body so a non-2xx status fails the step but still shows
+          # the response. Retry a few times: a transient blip here delays the
+          # whole retry ladder by another 5 minutes.
+          http_status=0
+          response=$(curl \
+            --silent --show-error --fail-with-body \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            --max-time 60 \
+            --request POST "${ALERT_ENDPOINT}" \
+            --header "Authorization: Bearer ${SWEEP_SECRET}" \
+            --header "Content-Type: application/json" \
+            --data '{"action":"sweep"}' \
+            --write-out "\n%{http_code}") || http_status=$?
+
+          body=$(printf '%s' "$response" | sed '$d')
+          code=$(printf '%s' "$response" | tail -n1)
+
+          if [ "$http_status" -ne 0 ]; then
+            echo "::error::Sweep request failed (curl exit ${http_status}, HTTP ${code})."
+            # The body may contain diagnostic detail but never recipient data -
+            # the sweep endpoint returns counts only (design §12).
+            echo "$body"
+            exit 1
+          fi
+
+          echo "$body"
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$body" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Summarise
+        if: always()
+        env:
+          BODY: ${{ steps.sweep.outputs.body }}
+        run: |
+          set -euo pipefail
+          {
+            echo "### Alert sweep"
+            echo ""
+            if [ -n "${BODY:-}" ]; then
+              echo '```json'
+              echo "$BODY"
+              echo '```'
+            else
+              echo "No response captured - the sweep did not complete."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Flag exhausted alerts
+        if: success()
+        env:
+          BODY: ${{ steps.sweep.outputs.body }}
+        run: |
+          set -euo pipefail
+          # {"retried":N,"orphans":N,"purged":N,"exhausted":N}
+          exhausted=$(printf '%s' "${BODY:-}" | grep -o '"exhausted":[0-9]*' | cut -d: -f2 || true)
+          if [ -n "${exhausted:-}" ] && [ "$exhausted" -gt 0 ]; then
+            echo "::warning::${exhausted} emergency alert message(s) exhausted all retries and were never delivered."
+          fi

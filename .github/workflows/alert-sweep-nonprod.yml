@@ -1,0 +1,98 @@
+# Manual sweep against the NON-PRODUCTION alert endpoint.
+#
+# Deliberately has no `schedule:`. Non-production alerts do not need a retry
+# clock running around the clock - the sweep only matters there when someone is
+# testing the retry ladder, which is a thing a person does on purpose.
+#
+# It exists as a workflow rather than a documented curl command so that it is
+# discoverable: a button in the Actions tab that the next person will find,
+# instead of a line in someone's notes that leaves with them.
+#
+# The production retry clock is alert-sweep.yml. That one is scheduled, and a
+# stale ops_heartbeat row from it is the alarm that must never be ignored.
+
+name: Alert Sweep (non-production)
+
+on:
+  workflow_dispatch: # manual only, by design
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alert-sweep-nonprod
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    name: Sweep the non-production alert endpoint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Call sweep endpoint
+        id: sweep
+        env:
+          ALERT_ENDPOINT: ${{ secrets.NONPROD_ALERT_ENDPOINT }}
+          SWEEP_SECRET: ${{ secrets.NONPROD_ALERT_SWEEP_SECRET }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${ALERT_ENDPOINT:-}" ] || [ -z "${SWEEP_SECRET:-}" ]; then
+            echo "::error::NONPROD_ALERT_ENDPOINT or NONPROD_ALERT_SWEEP_SECRET is not configured."
+            echo "::error::These are separate from the production secrets - see db/README.md."
+            exit 1
+          fi
+
+          # Guard against the worst mistake this workflow could make: pointing
+          # at production and retrying real undelivered emergency alerts under
+          # the impression this is a test run.
+          if [ "${ALERT_ENDPOINT}" = "${{ secrets.ALERT_ENDPOINT }}" ]; then
+            echo "::error::NONPROD_ALERT_ENDPOINT is the same as the production ALERT_ENDPOINT."
+            echo "::error::Refusing to run. Fix the secret before retrying."
+            exit 1
+          fi
+
+          http_status=0
+          response=$(curl \
+            --silent --show-error --fail-with-body \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            --max-time 60 \
+            --request POST "${ALERT_ENDPOINT}" \
+            --header "Authorization: Bearer ${SWEEP_SECRET}" \
+            --header "Content-Type: application/json" \
+            --data '{"action":"sweep"}' \
+            --write-out "\n%{http_code}") || http_status=$?
+
+          body=$(printf '%s' "$response" | sed '$d')
+          code=$(printf '%s' "$response" | tail -n1)
+
+          if [ "$http_status" -ne 0 ]; then
+            echo "::error::Sweep request failed (curl exit ${http_status}, HTTP ${code})."
+            # The sweep endpoint returns counts only, never recipient data.
+            echo "$body"
+            exit 1
+          fi
+
+          echo "$body"
+          echo "body<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$body" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Summarise
+        if: always()
+        env:
+          BODY: ${{ steps.sweep.outputs.body }}
+        run: |
+          set -euo pipefail
+          {
+            echo "### Alert sweep - non-production"
+            echo ""
+            if [ -n "${BODY:-}" ]; then
+              echo '```json'
+              echo "$BODY"
+              echo '```'
+            else
+              echo "No response captured - the sweep did not complete."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

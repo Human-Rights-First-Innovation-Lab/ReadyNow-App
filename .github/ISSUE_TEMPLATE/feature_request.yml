@@ -1,0 +1,68 @@
+name: Feature request
+description: Suggest a change or addition
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ReadyNow is used by people who may be in genuine danger, on old or
+        borrowed phones, who may not read English. Reliability and clarity beat
+        capability here: a feature that makes the app more powerful but less
+        predictable in an emergency is not an improvement.
+
+        Two things are settled and will be closed on sight — please read
+        [CONTRIBUTING.md](https://github.com/Human-Rights-First-Innovation-Lab/readynow/blob/develop/CONTRIBUTING.md#deliberately-out-of-scope)
+        first:
+
+        - **International phone numbers.** The ten-digit inputs and `+1`
+          default are the product's scope, not an oversight.
+        - **Over-the-air updates.** Considered and declined.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: >-
+            I have read the "Deliberately out of scope" section and this is not
+            one of those items.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve
+      description: >-
+        Describe the situation a user is in, not the feature. "A user who is
+        detained cannot ..." tells us more than "add a button that ...".
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you are proposing
+    validations:
+      required: true
+
+  - type: textarea
+    id: risk
+    attributes:
+      label: What could this make worse
+      description: >-
+        Every addition costs something — a screen gets busier, a code path gets
+        another branch, a translation goes stale. An honest answer here makes
+        the proposal stronger, not weaker.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: offering
+    attributes:
+      label: Are you offering to build it?
+      options:
+        - "No — suggesting it"
+        - "Yes, if the team agrees it fits"
+        - "Yes, and I have already started"
+    validations:
+      required: true

@@ -1,0 +1,74 @@
+{
+    "en": {
+        "title": "About ReadyNow",
+        "bePrepared": "Be Prepared.",
+        "getPeaceOfMind": "Get Peace of Mind.",
+        "appDescription": "This app empowers you quickly alert your friends and family with important information they need to help you if you are detained by immigration authorities.",
+        "contactsInfo": "Each contact gets the info they need to take action, fast.",
+        "continue": "Continue"
+    },
+    "es": {
+        "title": "Acerca de ReadyNow",
+        "bePrepared": "Esté Preparado.",
+        "getPeaceOfMind": "Obtenga Tranquilidad.",
+        "appDescription": "Esta aplicación te permite alertar rápidamente a sus amigos, familiares y apoyo legal con información importante que necesitan  para ayudarte si te detienen las autoridades de inmigración.",
+        "contactsInfo": "Cada contacto obtiene la información que necesita para actuar rápidamente.",
+        "continue": "Continuar"
+    },
+    "kr": {
+        "title": "ReadyNow 정보",
+        "bePrepared": "준비하세요.",
+        "getPeaceOfMind": "마음의 평화를 얻으세요.",
+        "appDescription": "이 앱을 통해 이민 당국에 의해 구금된 경우 친구와 가족에게 도움이 필요한 중요한 정보를 신속하게 알릴 수 있습니다.",
+        "contactsInfo": "각 연락처는 신속하게 조치를 취하는 데 필요한 정보를 받습니다.",
+        "continue": "계속"
+    },
+    "fr": {
+        "title": "À propos de ReadyNow",
+        "bePrepared": "Soyez prêt.",
+        "getPeaceOfMind": "Soyez rassuré.",
+        "appDescription": "Cette application vous permet de transmettre rapidement à vos proches, à votre famille, et à votre représentant juridique les informations essentielles dont ils ont besoin pour intervenir en cas de détention par les autorités de l'immigration.",
+        "contactsInfo": "Chaque contact reçoit rapidement les informations nécessaires pour agir.",
+        "continue": "Continuer"
+    },
+    "ht": {
+        "title": "Konsènan ReadyNow",
+        "bePrepared": "Prepare",
+        "getPeaceOfMind": "Asirew",
+        "appDescription": "Aplikasyon sa a pèmèt ou voye rapidman enfòmasyon esansyèl pou moun ou renmen, pou fanmi ou, pou reprezantan legal ou bezwen pou yo ka entèvni si otorite imigrasyon arete ou.",
+        "contactsInfo": "Chak kontak yo jwenn enfòmasyon yo bezwen pou yo ka aji rapidman.",
+        "continue": "Kontinye"
+    },
+    "zh": {
+        "title": "有关准备就绪",
+        "bePrepared": "提前准备",
+        "getPeaceOfMind": "心里踏实",
+        "appDescription": "这款应用程序能在您被移民机关拘留时帮助您快速向您的朋友，家人，以及法律援助方发送重要的信息通知",
+        "contactsInfo": "每个联系人都可以快速获取他们行动所需的信息",
+        "continue": "继续"
+    },
+    "ar": {
+        "title": "حول جاهز الآن",
+        "bePrepared": "جهز",
+        "getPeaceOfMind": "اطمئن على سلامتك",
+        "appDescription": "هدف هذا البرنامج هو توفير طريقة سريعة للمستخدم للتواصل مع الاقارب و الاصدقاء او المحامي الخاص بك في حال احتجازك من قبل سلطات الهجرة \"ICE\"",
+        "contactsInfo": "سيتم ارسال المعلومات المطلوبة إلى الجهات المختارة من قبل المستخدم لتمكينهم من مساعدتك بأسرع طريقة",
+        "continue": "الصفحة التالية"
+    },
+    "dr": {
+        "title": "دربارهٔ ReadyNow",
+        "bePrepared": "آماده باشید.",
+        "getPeaceOfMind": "آرامشِ خاطر به‌ دست آورید.",
+        "appDescription": "این برنامه به شما توانایی می‌دهد تا در صورت بازداشت شدن توسط مقامات مهاجرتی دوستان، خانواده و پشتیبان حقوقی‌ تان را به‌ سرعت با اطلاعات مهمی که برای کمک به شما نیاز دارند، آگاه سازید.",
+        "contactsInfo": "هر تماس‌ گیرنده اطلاعات لازم را برای اقدام فوری دریافت می‌کند.",
+        "continue": "ادامه دهید"
+    },
+    "ps": {
+        "title": "د ReadyNow په اړه",
+        "bePrepared": "چمتو اوسئ",
+        "getPeaceOfMind": "ذهني آرامښت ترلاسه کړئ",
+        "appDescription": "دا اپلیکیشن تاسو ته توان درکوي چې که د کډوالۍ چارواکو لخوا ونیول شئ، خپلې دوستان، کورنۍ او قانوني ملاتړ ته په چټکۍ سره هغه مهم معلومات واستوئ چې هغوی ستاسو د مرستې لپاره ورته اړتیا لري",
+        "contactsInfo": "هر اړیکه‌نیوونکی اړین معلومات د فوری اقدام لپاره ترلاسه کوي",
+        "continue": "ادامه ورکړئ"
+    }
+}

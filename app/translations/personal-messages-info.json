@@ -1,0 +1,92 @@
+{
+    "en": {
+        "title": "Step 2 of 3",
+        "personalEmergencyMessages": "Personal Safety Message",
+        "createMessages": "Next, create one or more messages that would help loved ones find you and advocate for your safety if you were detained.",
+        "additionalMessages": "After, you can create additional messages for child care, other people, and pets.",
+        "additionalMessagesBold": "create additional messages",
+        "remember": "Remember",
+        "messageInfo": "You can assign as many contacts as you like to one message, or create multiple messages if you need to send different information to different contacts.",
+        "continue": "Continue"
+    },
+    "es": {
+        "title": "Paso 2 de 3",
+        "personalEmergencyMessages": "Mensaje Personale de Emergencia",
+        "createMessages": "El proximo paso, crea uno o varios mensajes que ayuden a tus seres queridos a encontrarte y a velar por tu seguridad si te detuvieran.",
+        "additionalMessages": "Despues, puedes crear mensajes adicionales para cuidado de niños, otras personas y mascotas.",
+        "additionalMessagesBold": "crear mensajes adicionales",
+        "remember": "Recuerda",
+        "messageInfo": "Puedes asignar tantos contactos como desses a un mensaje, o crear various mensajes si necesitas enviar informacion diferente a distintos contactos.",
+        "continue": "Continuar"
+    },
+    "kr": {
+        "title": "3단계 중 2단계",
+        "personalEmergencyMessages": "개인 비상 메시지",
+        "createMessages": "다음으로, 귀하가 구금된 경우 사랑하는 사람들이 귀하를 찾고 안전을 지킬 수 있도록 하나 이상의 메시지를 작성하세요.",
+        "additionalMessages": "그 후, 아이 돌봄, 다른 사람들, 반려동물을 위한 추가 메시지를 작성할 수 있습니다.",
+        "additionalMessagesBold": "추가 메시지 작성",
+        "remember": "기억하세요",
+        "messageInfo": "하나의 메시지에 원하는 만큼 연락처를 지정하거나, 다른 연락처에 다른 정보를 보내야 할 경우 여러 메시지를 만들 수 있습니다.",
+        "continue": "계속"
+    },
+    "fr": {
+        "title": "Étape 2 sur 3",
+        "personalEmergencyMessages": "Message personnel d'urgence",
+        "createMessages": "Ensuite, créez un ou plusieurs messages qui aideraient vos proches à vous retrouver et à veiller à votre protection en cas de détention.",
+        "additionalMessages": "Après cela, vous pouvez créer des messages supplémentaires pour la garde d'enfants, d'autres personnes et des animaux de compagnie.",
+        "additionalMessagesBold": "créer des messages supplémentaires",
+        "remember": "Souvenez-vous",
+        "messageInfo": "Vous pouvez attribuer autant de contacts que vous le souhaitez à un message unique, ou créer plusieurs messages si vous devez envoyer des informations différentes à des contacts différents.",
+        "continue": "Continuer"
+    },
+    "ht": {
+        "title": "Etap 2 nan 3",
+        "personalEmergencyMessages": "Mesaj Ijans Pèsonèl",
+        "createMessages": "Apre sa, kreye youn oswa plis mesaj ki ta ka ede moun ou renmen jwenn ou epi defann dwa ou si ou te arete.",
+        "additionalMessages": "Apre sa, ou kapab kreye mesaj adisyonèl pou swen timoun, lòt moun, ak bèt kay.",
+        "additionalMessagesBold": "kreye mesaj adisyonèl",
+        "remember": "Sonje",
+        "messageInfo": "Ou kapab asiyen plizyè kontak nan yon sèl mesaj, oswa kreye plizyè mesaj si ou bezwen voye diferan enfòmasyon bay diferan kontak.",
+        "continue": "Kontinye"
+    },
+    "zh": {
+        "title": "步骤2，共3步",
+        "personalEmergencyMessages": "个人紧急消息",
+        "createMessages": "接下来，请创建多条消息来协助您的亲友在您被拘留的情况下寻找您和为您争取权益。",
+        "additionalMessages": "在此之后，您可以创建其他有关托儿，其他人，和宠物的额外消息。",
+        "additionalMessagesBold": "创建额外消息",
+        "remember": "记住",
+        "messageInfo": "您可以把同一条消息发给多个任何联系人，或者如果有需要，您也可以为每个联系人发送不同的信息。",
+        "continue": "继续"
+    },
+    "ar": {
+        "title": "الخطوة ٢ من ٣",
+        "personalEmergencyMessages": "رسائل الطوارئ الشخصية",
+        "createMessages": "الآن، قم بإنشاء رسالة أو أكثر تساعد أحبائك في العثور عليك والدفاع عن سلامتك إذا تم توقيفك.",
+        "additionalMessages": "بعد ذلك، يمكنك إنشاء رسائل إضافية حول رعاية الأطفال، وأشخاص آخرين، والحيوانات الأليفة.",
+        "additionalMessagesBold": "إنشاء رسائل إضافية",
+        "remember": "تذكّر",
+        "messageInfo": "يمكنك تعيين العديد من جهات الاتصال لرسالة واحدة، أو إنشاء رسائل متعددة إذا كنت بحاجة لإرسال معلومات مختلفة لجهات اتصال مختلفة.",
+        "continue": "متابعة"
+    },
+    "dr": {
+        "title": "مرحله ۲ از ۳",
+        "personalEmergencyMessages": "پیام اضطراری شخصی",
+        "createMessages": "در ادامه، یک یا چند پیام ایجاد کنید که در صورت بازداشت شما، به عزیزانتان کمک کند شما را پیدا کنند و از امنیت شما دفاع کنند.",
+        "additionalMessages": "پس از آن، می‌توانید پیام‌های اضافی برای مراقبت از کودکان، سایر افراد و حیوانات خانگی ایجاد کنید.",
+        "additionalMessagesBold": "پیام‌های اضافی ایجاد کنید",
+        "remember": "یادآوری",
+        "messageInfo": "می‌توانید به یک پیام هر تعداد تماس که می‌خواهید اختصاص دهید، یا چند پیام مختلف ایجاد کنید اگر نیاز دارید اطلاعات متفاوتی به تماس‌های مختلف ارسال شود.",
+        "continue": "ادامه"
+    },
+    "ps": {
+        "title": "مرحله ۲ د ۳ څخه",
+        "personalEmergencyMessages": "شخصي اضطراري پیغام",
+        "createMessages": "بیا، یو یا څو پیغامونه جوړ کړئ چې که تاسو ونیول شئ، ستاسو عزیزان سره مرسته وکړي چې تاسو پیدا کړي او ستاسو د خوندیتوب لپاره وکالت وکړي.",
+        "additionalMessages": "ورپسې، تاسو کولی شئ د ماشومانو پاملرنې، نورو خلکو، او څارویو لپاره اضافي پیغامونه جوړ کړئ.",
+        "additionalMessagesBold": "اضافي پیغامونه جوړ کړئ",
+        "remember": "یادونه",
+        "messageInfo": "تاسو کولی شئ یو پیغام ته هر څومره تماسونه چې غواړئ وټاکئ، یا څو پیغامونه جوړ کړئ که اړتیا لرئ مختلف معلومات مختلفو تماسونو ته واستوئ.",
+        "continue": "ادامه"
+    }
+}

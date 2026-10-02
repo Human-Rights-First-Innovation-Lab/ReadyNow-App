@@ -1,0 +1,30 @@
+{
+  // Node 18 support ended 2025-11-10. Every deploy and edit must be node22.
+  "runtime": "node22",
+
+  // The Service name becomes part of the domain and CANNOT be changed after
+  // the Service is created: <serviceName>-<4 digits>[-<suffix>].twil.io
+  //
+  // One Service holds both environments. The 4 digits are assigned once and
+  // shared, so production and non-production differ only by domain suffix:
+  //   readynow-XXXX.twil.io       production      .env.prod
+  //   readynow-XXXX-dev.twil.io   non-production  .env.nonprod
+  "serviceName": "readynow",
+
+  "functionsFolder": "functions",
+  // Holds ca.private.pem only. The ".private" marker keeps it off the web -
+  // it is bundled with the Functions and read via Runtime.getAssets().
+  // Never put a placeholder like .gitkeep in here; the toolkit tries to
+  // upload it as an Asset and the deploy fails.
+  "assetsFolder": "assets",
+
+  // Fill in the ZS... SID after the Service exists, so every later deploy
+  // targets it. While this is empty, a deploy CREATES A NEW SERVICE on a new
+  // domain - which is the one mistake that is expensive to undo.
+  "serviceSid": "ZS9fa9262ad2cd8155a8b9ad0bbe71785c"
+
+  // Deliberately no "environments" block. The env file is passed explicitly on
+  // each deploy so the command itself says which database it is pointing at:
+  //   twilio serverless:deploy --environment dev --env .env.nonprod
+  //   twilio serverless:deploy --production      --env .env.prod
+}

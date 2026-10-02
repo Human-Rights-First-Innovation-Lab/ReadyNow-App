@@ -1,0 +1,84 @@
+name: Translation correction
+description: A string is wrong, unclear, or badly worded in one of the nine languages
+labels: ["translation", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the contribution we most need, and you do not have to write any
+        code to make it. If you are a fluent speaker, telling us that a string
+        reads oddly is useful even if you are not sure what it should say
+        instead.
+
+        Some strings were machine-translated and are flagged in
+        [docs/translation-review.md](https://github.com/Human-Rights-First-Innovation-Lab/readynow/blob/develop/docs/translation-review.md).
+        Those are the highest priority.
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - Spanish (es)
+        - Korean (kr)
+        - French (fr)
+        - Haitian Creole (ht)
+        - Chinese (zh)
+        - Arabic (ar)
+        - Dari (dr)
+        - Pashto (ps)
+        - English (en)
+    validations:
+      required: true
+
+  - type: input
+    id: file
+    attributes:
+      label: Which file and key
+      description: >-
+        Files live in `app/translations/`. If you do not know the key, describe
+        the screen and quote the text you saw.
+      placeholder: "crash-reporting.json → neverItem2, or: the consent screen, second bullet"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested
+    attributes:
+      label: What it should say
+      description: Leave blank if you are flagging a problem rather than proposing wording.
+    validations:
+      required: false
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why the current wording is a problem
+      description: >-
+        Register and formality matter as much as accuracy — several of these
+        strings are consent prompts or safety instructions, where a softened
+        "never" or an ambiguous button label changes what the user is agreeing
+        to.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fluency
+    attributes:
+      label: Your relationship to the language
+      description: This helps us weigh conflicting suggestions. Any answer is welcome.
+      options:
+        - Native speaker
+        - Fluent speaker
+        - Professional translator
+        - Learner or using a dictionary
+        - Prefer not to say
+    validations:
+      required: false

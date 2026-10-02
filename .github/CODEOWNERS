@@ -1,0 +1,52 @@
+# Code owners for ReadyNow
+#
+# Listed owners are requested for review automatically when a PR touches a
+# matching path. The last matching pattern wins, so ordering matters.
+#
+# SETUP REQUIRED: the team below must exist in the
+# Human-Rights-First-Innovation-Lab org and have write access to this
+# repository. If it does not, GitHub silently ignores every rule in this file —
+# there is no warning. Create the team, or replace @.../readynow-maintainers
+# with individual @usernames throughout.
+#
+# To make these reviews mandatory rather than merely requested, enable
+# "Require review from Code Owners" in the branch protection rules for
+# `develop` and `main`.
+
+# Default: anything not matched below.
+*                                   @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# --- Areas with non-obvious constraints (see CONTRIBUTING.md) ---
+
+# Twilio Functions run against production and handle real phone numbers. Older
+# endpoint URLs are compiled into app bundles already on users' phones, and the
+# app has no over-the-air update mechanism: changing a request format breaks
+# people who cannot update.
+/twilio/                            @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# Authenticated encryption with no plaintext fallback, by design.
+/app/utils/encryption-utils.ts      @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# Opt-in, with all personal data scrubbed. New fields need discussion.
+/app/utils/crash-reporting.ts       @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# The alert send path must never report success on a failed send.
+/app/components/AlertButton.tsx     @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# --- Project governance, security posture and build integrity ---
+
+/SECURITY.md                        @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/CODE_OF_CONDUCT.md                 @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/CONTRIBUTING.md                    @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/LICENSE                            @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/NOTICE                             @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/DCO.md                             @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/.github/                           @Human-Rights-First-Innovation-Lab/readynow-maintainers
+
+# Native build configuration and the security config plugins. A change here can
+# quietly weaken the hardening applied at build time.
+/*-plugin.js                        @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/app.json                           @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/eas.json                           @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/package.json                       @Human-Rights-First-Innovation-Lab/readynow-maintainers
+/package-lock.json                  @Human-Rights-First-Innovation-Lab/readynow-maintainers

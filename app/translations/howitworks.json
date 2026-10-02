@@ -1,0 +1,110 @@
+{
+    "en": {
+        "title": "How It Works",
+        "emergencyPlan": "Your Emergency Plan",
+        "simplified": "In Action",
+        "planTitle": "Plan",
+        "planDescription": "Get ready now, so you're prepared later. Set up your emergency contacts and create messages with info they would need - like childcare plans and how to locate you.",
+        "actTitle": "Act",
+        "actDescription": "Press the Alert Button if you're facing detention to send out these emergency messages with just one click.",
+        "learnMore": "Learn More",
+        "visitFaq": "Visit our FAQ page here",
+        "continue": "Continue"
+    },
+    "es": {
+        "title": "Cómo Funciona",
+        "emergencyPlan": "Su Plan de Emergencia",
+        "simplified": "En Acción",
+        "planTitle": "Preparar",
+        "planDescription": "Prepárate ahora para estar preparado. Establece tus contactos de emergencia y crea mensajes con información que puedan necesitar, como planes para el cuidado de los niños y cómo localizarte.",
+        "actTitle": "Actua",
+        "actDescription": "Toca el botón de alertas si te enfrentas a un detención para enviar estos mensajes de emergencia con un solo clic.",
+        "learnMore": "Aprender Más",
+        "visitFaq": "Para más información visite nuestra página de preguntas frecuentes aquí",
+        "continue": "Continuar"
+    },
+    "kr": {
+        "title": "작동 방식",
+        "emergencyPlan": "귀하의 비상 계획",
+        "simplified": "실행",
+        "planTitle": "계획",
+        "planDescription": "나중에 준비가 되도록 지금 준비하세요. 비상 연락처를 설정하고 육아 계획 및 귀하의 위치를 파악하는 방법과 같이 필요한 정보가 포함된 메시지를 작성하세요.",
+        "actTitle": "행동",
+        "actDescription": "구금에 직면하고 있다면 알림 버튼을 눌러 이러한 비상 메시지를 한 번의 클릭으로 보내세요.",
+        "learnMore": "더 알아보기",
+        "visitFaq": "여기에서 FAQ 페이지를 방문하세요",
+        "continue": "계속"
+    },
+    "fr": {
+        "title": "Comment ça fonctionne",
+        "emergencyPlan": "Votre plan d'urgence",
+        "simplified": "en action",
+        "planTitle": "Planifier",
+        "planDescription": "Préparez-vous dès maintenant pour être prêt le moment venu. Enregistrez vos contacts d'urgence et rédigez les messages contenant les informations dont ils auraient besoin, comme les dispositions pour la garde de vos enfants ou les moyens de vous localiser.",
+        "actTitle": "Agir",
+        "actDescription": "En cas de détention, appuyez sur le bouton d'alerte ReadyNow pour envoyer immédiatement ces messages d'urgence à vos contacts, en un seul clic.",
+        "learnMore": "En savoir plus",
+        "visitFaq": "Consultez notre page FAQ ici",
+        "continue": "Continuer"
+    },
+    "ht": {
+        "title": "Kijan sa fonksyone",
+        "emergencyPlan": "Plan ijans ou a",
+        "simplified": "nan aksyon",
+        "planTitle": "Planifye",
+        "planDescription": "Prepare w depi kounye an pou w ka pare lè moman an rive. Anrejistre kontak ijans ou yo epi ekri mesaj ki gen enfòmasyon yo ta bezwen, tankou dispozisyon pou gad timoun ou yo oswa fason pou lokalize ou.",
+        "actTitle": "Aji",
+        "actDescription": "Nan ka detansyon, peze sou bouton alèt ReadyNow la pou voye imedyatman mesaj ijans sa yo bay kontak ou yo, ak yon sèl klike.",
+        "learnMore": "Aprann plis",
+        "visitFaq": "Konsilte paj FAQ nou an isit la",
+        "continue": "Kontinye"
+    },
+    "zh": {
+        "title": "使用方法",
+        "emergencyPlan": "您的紧急预案",
+        "simplified": "运行中",
+        "planTitle": "计划",
+        "planDescription": "现在就做好准备，才能从容应对。预设好您的紧急联系人，并且预设好待发送的他们需要的信息，例如托儿安排以及如何定位您。",
+        "actTitle": "行动",
+        "actDescription": "在您将要面临拘留时，按下 准备就绪 警报按钮，一键发送预设的紧急消息",
+        "learnMore": "了解更多信息",
+        "visitFaq": "访问问答页面了解更多信息",
+        "continue": "继续"
+    },
+    "ar": {
+        "title": "كيف يعمل؟",
+        "emergencyPlan": "خطتك في حالة الطوارئ",
+        "simplified": "للتنفيذ",
+        "planTitle": "الخطة",
+        "planDescription": "استعد الآن لتكون جاهز لاحقًا. أضف الجهات التي تريد الاتصال بها في حالة الطوارئ وأنشئ رسائل بالمعلومات التي قد يحتاجونها لمساعدتك، مثل خطط رعاية الأطفال وكيفية العثور عليك.",
+        "actTitle": "للتنفيذ",
+        "actDescription": "اضغط زر التنبيه والاستغاثة في تطبيق جاهز الآن إذا كنت معرض للاحتجاز، وسيتم إرسال الرسائل التي قمت بإعدادها إلى الأشخاص المعنية",
+        "learnMore": "مزيد من المعلومات",
+        "visitFaq": "صفحة الأسئلة الشائعة هنا",
+        "continue": "الصفحة التالية"
+    },
+    "dr": {
+        "title": "چگونگی عملکرد",
+        "emergencyPlan": "طرح اضطراری شما",
+        "simplified": "در عمل",
+        "planTitle": "طرح",
+        "planDescription": "هم‌اکنون آماده شوید تا بعداً آماده باشید. مخاطبین اضطراری خود را تعیین کرده و پیام‌ هایی شامل اطلاعات که مورد نیاز آن‌ها باشد را ایجاد کنید، مانند برنامه‌های مراقبت از کودکان و نحوه پیدا کردن شما.",
+        "actTitle": "اقدام",
+        "actDescription": "اگر در معرض بازداشت قرار دارید، دکمهٔ هشدار «ریدی‌ناو» را فشار دهید تا این پیام‌های اضطراری تنها با یک کلیک ارسال شوند",
+        "learnMore": "برای اطلاعات بیشتر",
+        "visitFaq": "به صفحهٔ پرسش‌های متداول ما مراجعه کنید. اینجا کلیک کنید",
+        "continue": "ادامه دهید"
+    },
+    "ps": {
+        "title": "څنګه کار کوي",
+        "emergencyPlan": "ستاسو د اضطراري پلان",
+        "simplified": "عملي کول",
+        "planTitle": "طرح",
+        "planDescription": "همدا اوس چمتو شئ ترڅو وروسته هم چمتو اوسئ. خپلې اضطراري اړیکې وټاکئ او پیغامونه جوړ کړئ چې پکې هغه معلومات شامل وي چې دوی ورته اړتیا لري، لکه د ماشومانو د ساتنې پلانونه او ستاسو د موندلو لاره.",
+        "actTitle": "اقدام",
+        "actDescription": "که تاسو د نیولو په حالت کې یاست، د «ReadyNow» خبرداری تڼۍ فشار کړئ ترڅو دا اضطراري پیغامونه یوازې په یو کلیک واستول شي.",
+        "learnMore": "د نورو معلوماتو لپاره",
+        "visitFaq": "زموږ د پوښتنو او ځوابونو پاڼې ته مراجعه وکړئ. دلته کلیک وکړئ",
+        "continue": "ادامه ورکړئ"
+    }
+}
